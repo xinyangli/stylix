@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 let
   cfg = config.stylix.fonts;
@@ -17,8 +22,10 @@ let
     };
   };
 
-in {
+in
+{
   options.stylix.fonts = {
+    enable = lib.mkEnableOption "font settings in stylix";
     serif = lib.mkOption {
       description = "Serif font.";
       type = fontType;
